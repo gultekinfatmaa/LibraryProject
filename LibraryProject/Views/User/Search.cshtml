@@ -1,0 +1,47 @@
+﻿
+@model List<yazlab2_1.Models.EntitiyFramework.Kitaplar>
+    @{
+        ViewBag.Title = "kitapAra";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Kitap Ara</h2>
+    <form>
+
+        <div class="form-group">
+            <label>ISBN</label>
+            <input type="text" name="ISBN" class="form-control" />
+            <label>Kitap Adı</label>
+            <input type="text" name="KitapAdı" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-succes">Ara</button>
+    </form>
+
+    @if (Model != null)
+    {
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Kitap ISBN</th>
+                    <th>Kitap İsmi</th>
+                    <th>Kitabı Al</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var kitaplar in Model)
+                {
+                    <tr>
+                        <td>@kitaplar.ISBN</td>
+                        <td>@kitaplar.Kitap_Adı </td>
+                        <td><a class="btn btn-primary">Kitabı Al</a></td>
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    }
+

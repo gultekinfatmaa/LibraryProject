@@ -1,0 +1,32 @@
+﻿
+@model List<yazlab2_1.Models.EntitiyFramework.Kitaplar>
+@{
+    ViewBag.Title = "kitapAl";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kitap Al</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Kitap ISBN</th>
+            <th>Kitap İsmi</th>
+            <th>Kitabı Al</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kitaplar in Model)
+{
+            <tr>
+                <td>@kitaplar.ISBN</td>
+                <td>@kitaplar.Kitap_Adı </td>
+                <td>@Html.ActionLink("Kitabı Al", "kitapAl", new {isbn = kitaplar.ISBN }, new {@class="btn btn-succes"})</td>
+                
+
+            </tr>
+  }
+
+    </tbody>
+</table>

@@ -1,0 +1,35 @@
+﻿@using yazlab2_1.Models.EntitiyFramework
+@model List<Kullanicilar>
+@{
+    ViewBag.Title = "kullanicilariListele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kullanıcı Listesi</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>İsim</th>
+                <th>Kitap</th>
+                <th>Alınan Tarih</th>
+                <th>Şifre</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var kullanicilar in Model)
+            {
+                <tr>
+                    <td>@kullanicilar.id</td>
+                    <td>@kullanicilar.isim </td>
+                    <td>@kullanicilar.kitap </td>
+                    <td>@kullanicilar.alinan_tarih.Value.ToString("dd-MM-yyyy") </td>
+                    <td>@kullanicilar.password </td>
+                  
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    
